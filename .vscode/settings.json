@@ -1,0 +1,6 @@
+{
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "/home/hector/Descargas/biblioteca_progiii.jar"
+    ]
+}
