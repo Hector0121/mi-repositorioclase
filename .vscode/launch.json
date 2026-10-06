@@ -21,6 +21,13 @@
                 "10",
                 "20"
             ]
+        },
+        {
+            "type": "java",
+            "name": "Ejercicio2_Semana4",
+            "request": "launch",
+            "mainClass": "Ejercicio2_Semana4",
+            "args": ["Juan", "185","89"]
         }
     ]
 }
