@@ -1,0 +1,26 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Ejercicio1_Semana4",
+            "request": "launch",
+            "mainClass": "Ejercicio1_Semana4",
+            "projectName": "mi-repositorioclase_521bc88e"
+        },
+        {
+            "type": "java",
+            "name": "Ejecutar con argumentos",
+            "request": "launch",
+            "mainClass": "${file}",
+            "args": [
+                "10",
+                "20"
+            ]
+        }
+    ]
+}
