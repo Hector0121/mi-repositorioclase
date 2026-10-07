@@ -1,4 +1,4 @@
-import java.util.Scanner;
+
 
 public class Ejercicio2_Semana4 {
     public static class Persona{
@@ -18,8 +18,21 @@ public class Ejercicio2_Semana4 {
         }
 
         //Metodos
+
+        public static Persona crearDesdeArray(String[] datos) {
+            String nombre = datos[0];
+            float peso = Float.parseFloat(datos[1]);
+            float altura = Float.parseFloat(datos[2]);
+            
+            // Llama a tu constructor
+            return new Persona(nombre, altura, peso);
+        }
+
         public float calcularIMC(float peso, float altura){
-            return peso / (altura * altura);
+            float IMC;
+            altura=altura/100;
+            IMC=peso/(altura*altura);
+            return IMC;
         }
 
         //Getter y Setter
@@ -45,15 +58,19 @@ public class Ejercicio2_Semana4 {
         }
 
     }
-    public static void main (String args[]){
-        Scanner sc =new Scanner(System.in);
-        Persona person =new Persona();
-        float IMC;
-        person = new Persona(args[0],Float.parseFloat(args[1]),Float.parseFloat(args[2]));
-        IMC=person.calcularIMC(Float.parseFloat(args[2]),Float.parseFloat(args[1]));
+    public static void main(String[] args) {
+        // En lugar de usar Scanner y bucles, creamos LA persona
+        // directamente desde el array 'args' usando el método estático:
+        Persona p = Persona.crearDesdeArray(args);
 
-        System.out.println("------------------------------------");
-        System.out.printf("Nombre %10s\nAltura %-10.2f\nPeso %-10.2f\nIMC %-10.2f /n", person.getNombre(),person.getAltura(),person.getPeso(),IMC);
-        System.out.println("------------------------------------");
+        // Tu formateo de tabla mantenido:
+        float IMC = p.calcularIMC(p.getPeso(), p.getAltura());
+        System.out.println("----------------------------------------------");
+        System.out.printf("|Nombre |\tAltura |\tPeso  |\tIMC  |\n| %-5s |\t%-6.2f |\t%-2.2f |\t%-4.2f|\n", 
+                p.getNombre(), p.getAltura(), p.getPeso(), IMC);
+        System.out.println("----------------------------------------------");
     }
+
+        
+    
 }
