@@ -7,6 +7,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Ejercicio3_Semana4",
+            "request": "launch",
+            "mainClass": "Ejercicio3_Semana4",
+            "projectName": "mi-repositorioclase_521bc88e"
+        },
+        {
+            "type": "java",
             "name": "Ejercicio1_Semana4",
             "request": "launch",
             "mainClass": "Ejercicio1_Semana4",
@@ -27,7 +34,11 @@
             "name": "Ejercicio2_Semana4",
             "request": "launch",
             "mainClass": "Ejercicio2_Semana4",
-            "args": ["Juan", "185","89"]
+            "args": [
+                "Juan",
+                "185",
+                "89"
+            ]
         }
     ]
 }
