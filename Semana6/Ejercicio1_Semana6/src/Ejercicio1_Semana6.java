@@ -27,7 +27,7 @@ public class Ejercicio1_Semana6
                   break;
                 case 2: eliminarCoche(); break;
                 case 3: modificarCoche(); break;
-                case 4: ; break;
+                case 4: impimirconcesionario() ; break;
                 case 5: System.out.println("¡Hasta luego!"); break;
                 default: System.out.println("Opción no válida.");
             }
@@ -54,22 +54,35 @@ public class Ejercicio1_Semana6
         concesionario [num_coches-1]=new Coche(nombre,marca,num_matr,letr_matrc);
         }
     }
-    public static void eliminarCoche(){
-      System.out.println("Introduce el numero de matricual ");
-      int num = sc.nextInt();
-      sc.nextLine();
-      System.out.println("Introduce letra de matricual ");
-      String letr = sc.nextLine();
-      for(int i =0; i<num_coches;i++){
+    public static void eliminarCoche() {
+    System.out.println("Introduce el numero de matricula: ");
+    int num = sc.nextInt();
+    sc.nextLine();
+    System.out.println("Introduce las letras de la matricula: ");
+    String letr = sc.nextLine();
+    
+    int encontrada = -1;
+    
+    // 1. Buscar la posición del coche
+    for(int i = 0; i < num_coches; i++) {
         if((concesionario[i].getLetra_matricula().equals(letr)) && (concesionario[i].getNum_matricula() == num)){
-          for(int x=i ;x<num_coches;x++){
-            concesionario[i]=concesionario[i+1];
-          }
-          concesionario[num_coches-1]=null;
-          num_coches--;
-        }
+            encontrada = i;
+            break; // Encontramos el coche, salimos del bucle
         }
     }
+    
+    // 2. Si se encontró, procedemos a desplazar
+    if(encontrada != -1) {
+        for(int x = encontrada; x < num_coches - 1; x++){
+            concesionario[x] = concesionario[x + 1];
+        }
+        concesionario[num_coches - 1] = null;
+        num_coches--;
+        System.out.println("¡Coche eliminado con éxito!");
+    } else {
+        System.out.println("Error: No se encontró ningún coche con esa matrícula.");
+    }
+  }
     public static void modificarCoche(){
       System.out.println("Introduce el numero de matricual ");
       int num = sc.nextInt();
@@ -80,6 +93,7 @@ public class Ejercicio1_Semana6
       for(int i =0; i<num_coches;i++){
         if((concesionario[i].getLetra_matricula().equals(letr)) && (concesionario[i].getNum_matricula() == num)){
           posicion=i;
+          break;
         }
       }
       int opcion;

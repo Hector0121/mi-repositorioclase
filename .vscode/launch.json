@@ -7,6 +7,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Ejercicio1_Semana6",
+            "request": "launch",
+            "mainClass": "Ejercicio1_Semana6",
+            "projectName": "mi-repositorioclase_521bc88e"
+        },
+        {
+            "type": "java",
             "name": "App",
             "request": "launch",
             "mainClass": "App",
